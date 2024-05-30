@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            margin: 0 auto;
+        }
+        .form-control {
+            border-radius: 10px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+        .btn-primary {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+        .btn-primary:hover {
+            background-color: #ff4d4d;
+            border-color: #ff4d4d;
+        }
+        .btn-warning {
+            background-color: #ffd166;
+            border-color: #ffd166;
+            color: #333;
+        }
+        .btn-warning:hover {
+            background-color: #ffce00;
+            border-color: #ffce00;
+            color: #333;
+        }
+        .btn-danger {
+            background-color: #ff7e67;
+            border-color: #ff7e67;
+        }
+        .btn-danger:hover {
+            background-color: #ff6347;
+            border-color: #ff6347;
+        }
+        .bg-primary {
+            background-color: #ff6b6b !important;
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5"
+      >
+        <h2 class="mb-2 text-white">College Parivahan</h2>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link">Home</a>
+          <a href="about.html" class="nav-item nav-link active">About</a>
+          <a href="service.html" class="nav-item nav-link">Services</a>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              >Pages</a
+            >
+            <div class="dropdown-menu fade-up m-0">
+              <a href="price.html" class="dropdown-item">Pricing Plan</a>
+              <a href="feature.html" class="dropdown-item">Features</a>
+              <a href="quote.html" class="dropdown-item">Free Quote</a>
+              <a href="team.html" class="dropdown-item">Our Team</a>
+              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+              <a href="404.html" class="dropdown-item">404 Page</a>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+        <h4 class="m-0 pe-lg-5 d-none d-lg-block">
+          <i class="fa fa-headphones text-primary me-3"></i>+012 345 6789
+        </h4>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mb-4"><i class="fas fa-user-plus icon"></i> Add Bus Driver</h2>
+                <form id="addDriverForm">
+                    <div class="mb-5">
+                        <input type="text" class="form-control" id="driverName" name="driverName" placeholder="Driver Name" style="width: 66%; height: 48px;" required>
+                    </div>
+                    <div class="mb-5">
+                        <input type="text" class="form-control" id="driverPhone" name="driverPhone" placeholder="Driver Phone Number" style="width: 66%; height: 48px;" required>
+                    </div>
+                    <div class="mb-5">
+                        <input type="number" class="form-control" id="driverSalary" name="driverSalary" placeholder="Driver Salary" style="width: 66%; height: 48px;" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-plus icon"></i> Add Driver</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4"><i class="fas fa-bus icon"></i> Add Bus Details</h2>
+                <form id="addBusForm">
+                    <div class="mb-5">
+                        <input type="text" class="form-control" id="busNumber" name="busNumber" placeholder="Bus Number" style="width: 66%; height: 48px;" required>
+                    </div>
+                    <div class="mb-5">
+                        <input type="text" class="form-control" id="busRoute" name="busRoute" placeholder="Bus Route" style="width: 66%; height: 48px;" required>
+                    </div>
+                    <div class="mb-5">
+                        <input type="number" class="form-control" id="maxCapacity" name="maxCapacity" placeholder="Max Capacity" style="width: 66%; height: 48px;" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-plus icon"></i> Add Bus</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="mb-3"><i class="fas fa-dollar-sign icon"></i> Update/Delete Bus Expenses</h2>
+                <form id="updateExpenseForm">
+                    <div class="mb-3">
+                        <textarea class="form-control" id="expenseDescription" name="expenseDescription" rows="5" placeholder="Expense Description" style="width: 50%; height: 150px;" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <input type="number" class="form-control" id="expenseAmount" name="expenseAmount" placeholder="Expense Amount" style="width: 20%; height: 45px;" required>
+                    </div>
+                    <button type="button" class="btn btn-primary mr-6" onclick="addExpense()"><i class="fas fa-plus icon"></i> Add Expense</button>
+                    <button type="button" class="btn btn-warning mr-6" onclick="updateExpense()"><i class="fas fa-edit icon"></i> Update Expense</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteExpense()"><i class="fas fa-trash-alt icon"></i> Delete Expense</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('addDriverForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const driverName = document.getElementById('driverName').value;
+            const driverPhone = document.getElementById('driverPhone').value;
+            const driverSalary = document.getElementById('driverSalary').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/add-driver', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: driverName, phone: driverPhone, salary: driverSalary })
+                });
+                if (response.ok) {
+                    alert('Driver added successfully!');
+                } else {
+                    alert('Failed to add driver');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        document.getElementById('addBusForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const busNumber = document.getElementById('busNumber').value;
+            const busRoute = document.getElementById('busRoute').value;
+            const maxCapacity = document.getElementById('maxCapacity').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/add-bus', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ number: busNumber, route: busRoute, capacity: maxCapacity })
+                });
+                if (response.ok) {
+                    alert('Bus added successfully!');
+                } else {
+                    alert('Failed to add bus');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        async function addExpense() {
+            const expenseDescription = document.getElementById('expenseDescription').value;
+            const expenseAmount = document.getElementById('expenseAmount').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/add-expense', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ description: expenseDescription, amount: expenseAmount })
+                });
+                if (response.ok) {
+                    alert('Expense added successfully!');
+                } else {
+                    alert('Failed to add expense');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function updateExpense() {
+            const expenseDescription = document.getElementById('expenseDescription').value;
+            const expenseAmount = document.getElementById('expenseAmount').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/update-expense', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ description: expenseDescription, amount: expenseAmount })
+                });
+                if (response.ok) {
+                    alert('Expense updated successfully!');
+                } else {
+                    alert('Failed to update expense');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function deleteExpense() {
+            const expenseDescription = document.getElementById('expenseDescription').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/delete-expense', {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ description: expenseDescription })
+                });
+                if (response.ok) {
+                    alert('Expense deleted successfully!');
+                } else {
+                    alert('Failed to delete expense');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
