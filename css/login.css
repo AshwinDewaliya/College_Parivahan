@@ -250,3 +250,22 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+
+
+
+/* Add this CSS to your login.css file */
+
+.switch-to-login {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.switch-to-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
