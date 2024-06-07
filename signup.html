@@ -41,7 +41,7 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-            <input type="email" placeholder="Name" />
+            <input type="name" placeholder="Name" />
             <input type="mobNo" placeholder="Mobile Number" />
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
@@ -59,12 +59,70 @@
 			<div class="overlay-panel overlay-right">
 				<h1>Hello User</h1>
 				<p>Enter your personal details and start journey with us</p>
-				<!-- <button class="ghost" id="signUp">Sign Up</button> -->
+				
 			</div>
 		</div>
 	</div>
 </div>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var signUpForm = document.getElementById("signUpForm");
+	
+		if (signUpForm) {
+			signUpForm.addEventListener("submit", handleSignUp);
+		}
+	
+		function handleSignUp(event) {
+			event.preventDefault(); // Prevent the form from submitting the traditional way
+	
+			var name = document.getElementById("signupName").value;
+			var mobile = document.getElementById("signupMobile").value;
+			var email = document.getElementById("signupEmail").value;
+			var password = document.getElementById("signupPassword").value;
+	
+			// Predefined credentials for sign up
+			var predefinedSignUpCredentials = [
+				{
+				name: "Aryan",
+				mobile: "7898266241",
+				email: "rajputaryan521@gmail.com",
+				password: "aryan123"
+			},
+			{
+				name: "Amita",
+				mobile:"7489123237",
+				email: "amitagautam2004@gmail.com", 
+				password: "amita123"
+			},
+			{
+				name: "Ashwin",
+				mobile:"9516982898",
+				email: "ashwindewaliya47@gmail.com",
+				password: "ashwin123"
+			},
+			{
+				name:"Sarthik",
+				mobile:"9165240649",
+				email: "sarthikthakur21@gmail.com", 
+				password: "sarthik123"
+			}
+		];
+	
+			// Check if the entered credentials match the predefined sign-up credentials
+			if (name === predefinedSignUpCredentials.name &&
+				mobile === predefinedSignUpCredentials.mobile &&
+				email === predefinedSignUpCredentials.email &&
+				password === predefinedSignUpCredentials.password) {
+
+				alert("Sign Up successful");
+				// You can redirect or perform other actions here
+			} else {
+				alert("Sign Up failed");
+			}
+		}
+	});
+	</script>
 
 </body>
 </html>

@@ -73,27 +73,25 @@ document.addEventListener("DOMContentLoaded", function() {
         var email = document.querySelector(".sign-in-container input[type='email']").value;
         var password = document.querySelector(".sign-in-container input[type='password']").value;
 
-        fetch('http://localhost:5000/api/admin/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: email, password: password })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.message === "Login successful") {
-                window.location.href = "admin.html";
-            } else {
-                alert("Login failed");
-            }
-        })
-        .catch(error => console.error('Error:', error));
+        // Predefined credentials
+        var predefinedCredentials = [
+            { email: "rajputaryan521@gmail.com", password: "aryan123" },
+            { email: "amitagautam2004@gmail.com", password: "amita123" },
+            { email: "ashwindewaliya47@gmail.com", password: "ashwin123" },
+            { email: "sarthikthakur21@gmail.com", password: "sarthik123" }
+        ];
+
+        // Check if the entered credentials match any predefined credentials
+        var isValid = predefinedCredentials.some(function(credential) {
+            return credential.email === email && credential.password === password;
+        });
+
+        if (isValid) {
+            alert("Login successful");
+            window.location.href = "admin.html";
+        } else {
+            alert("Login failed");
+        }
     }
 });
 </script>

@@ -34,24 +34,6 @@
             background-color: #ff4d4d;
             border-color: #ff4d4d;
         }
-        .btn-warning {
-            background-color: #ffd166;
-            border-color: #ffd166;
-            color: #333;
-        }
-        .btn-warning:hover {
-            background-color: #ffce00;
-            border-color: #ffce00;
-            color: #333;
-        }
-        .btn-danger {
-            background-color: #ff7e67;
-            border-color: #ff7e67;
-        }
-        .btn-danger:hover {
-            background-color: #ff6347;
-            border-color: #ff6347;
-        }
         .bg-primary {
             background-color: #ff6b6b !important;
         }
@@ -93,19 +75,17 @@
               >Pages</a
             >
             <div class="dropdown-menu fade-up m-0">
-              <a href="price.html" class="dropdown-item">Pricing Plan</a>
-              <a href="feature.html" class="dropdown-item">Features</a>
+              
+              
               <a href="quote.html" class="dropdown-item">Free Quote</a>
               <a href="team.html" class="dropdown-item">Our Team</a>
-              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+              
               <a href="404.html" class="dropdown-item">404 Page</a>
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <h4 class="m-0 pe-lg-5 d-none d-lg-block">
-          <i class="fa fa-headphones text-primary me-3"></i>+012 345 6789
-        </h4>
+        
       </div>
     </nav>
     <!-- Navbar End -->
@@ -116,10 +96,10 @@
                 <h2 class="mb-4"><i class="fas fa-user-plus icon"></i> Add Bus Driver</h2>
                 <form id="addDriverForm">
                     <div class="mb-5">
-                        <input type="text" class="form-control" id="driverName" name="driverName" placeholder="Driver Name" style="width: 66%; height: 48px;" required>
+                        <input type="text" class="form-control" id="driverName" name="driverName" placeholder="Driver Name"  style="width: 66%; height: 48px;" required>
                     </div>
                     <div class="mb-5">
-                        <input type="text" class="form-control" id="driverPhone" name="driverPhone" placeholder="Driver Phone Number" style="width: 66%; height: 48px;" required>
+                        <input type="text" class="form-control" id="driverPhone" name="driverPhone" placeholder="Driver Phone Number"  style="width: 66%; height: 48px;" required>
                     </div>
                     
                     <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-plus icon"></i> Add Driver</button>
@@ -129,35 +109,18 @@
                 <h2 class="mb-4"><i class="fas fa-bus icon"></i> Add Bus Details</h2>
                 <form id="addBusForm">
                     <div class="mb-5">
-                        <input type="text" class="form-control" id="busNumber" name="busNumber" placeholder="Bus Number" style="width: 66%; height: 48px;" required>
+                        <input type="text" class="form-control" id="busNumber" name="busNumber" placeholder="Bus Number"  style="width: 66%; height: 48px;" required>
                     </div>
                     <div class="mb-5">
-                        <input type="text" class="form-control" id="busRoute" name="busRoute" placeholder="Bus Route" style="width: 66%; height: 48px;" required>
+                        <input type="text" class="form-control" id="busRoute" name="busRoute" placeholder="Bus Route"  style="width: 66%; height: 48px;" required>
                     </div>
                     <div class="mb-5">
-                        <input type="text" class="form-control" id="schedule" name="schedule" placeholder="Schedule" style="width: 66%; height: 48px;" required>
+                        <input type="text" class="form-control" id="schedule" name="schedule" placeholder="Schedule"  style="width: 66%; height: 48px;" required>
                     </div>
                     <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-plus icon"></i> Add Bus</button>
                 </form>
             </div>
         </div>
-<!-- 
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <h2 class="mb-3"><i class="fas fa-dollar-sign icon"></i> Update/Delete Bus Expenses</h2>
-                <form id="updateExpenseForm">
-                    <div class="mb-3">
-                        <textarea class="form-control" id="expenseDescription" name="expenseDescription" rows="5" placeholder="Expense Description" style="width: 50%; height: 150px;" required></textarea>
-                    </div>
-                    <div class="mb-4">
-                        <input type="number" class="form-control" id="expenseAmount" name="expenseAmount" placeholder="Expense Amount" style="width: 20%; height: 45px;" required>
-                    </div>
-                    <button type="button" class="btn btn-primary mr-6" onclick="addExpense()"><i class="fas fa-plus icon"></i> Add Expense</button>
-                    <button type="button" class="btn btn-warning mr-6" onclick="updateExpense()"><i class="fas fa-edit icon"></i> Update Expense</button>
-                    <button type="button" class="btn btn-danger" onclick="deleteExpense()"><i class="fas fa-trash-alt icon"></i> Delete Expense</button>
-                </form>
-            </div>
-        </div> -->
     </div>
 
     <!-- Font Awesome JS -->
@@ -171,13 +134,12 @@
             event.preventDefault();
             const driverName = document.getElementById('driverName').value;
             const driverPhone = document.getElementById('driverPhone').value;
-            const driverSalary = document.getElementById('driverSalary').value;
 
             try {
                 const response = await fetch('http://localhost:5000/api/add-driver', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: driverName, phone: driverPhone, salary: driverSalary })
+                    body: JSON.stringify({ name: driverName, phone: driverPhone })
                 });
                 if (response.ok) {
                     alert('Driver added successfully!');
@@ -193,13 +155,13 @@
             event.preventDefault();
             const busNumber = document.getElementById('busNumber').value;
             const busRoute = document.getElementById('busRoute').value;
-            const maxCapacity = document.getElementById('maxCapacity').value;
+            const schedule = document.getElementById('schedule').value;
 
             try {
                 const response = await fetch('http://localhost:5000/api/add-bus', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ number: busNumber, route: busRoute, capacity: maxCapacity })
+                    body: JSON.stringify({ number: busNumber, route: busRoute, schedule: schedule })
                 });
                 if (response.ok) {
                     alert('Bus added successfully!');
@@ -210,65 +172,6 @@
                 console.error('Error:', error);
             }
         });
-
-        async function addExpense() {
-            const expenseDescription = document.getElementById('expenseDescription').value;
-            const expenseAmount = document.getElementById('expenseAmount').value;
-
-            try {
-                const response = await fetch('http://localhost:5000/api/add-expense', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ description: expenseDescription, amount: expenseAmount })
-                });
-                if (response.ok) {
-                    alert('Expense added successfully!');
-                } else {
-                    alert('Failed to add expense');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        async function updateExpense() {
-            const expenseDescription = document.getElementById('expenseDescription').value;
-            const expenseAmount = document.getElementById('expenseAmount').value;
-
-            try {
-                const response = await fetch('http://localhost:5000/api/update-expense', {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ description: expenseDescription, amount: expenseAmount })
-                });
-                if (response.ok) {
-                    alert('Expense updated successfully!');
-                } else {
-                    alert('Failed to update expense');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-
-        async function deleteExpense() {
-            const expenseDescription = document.getElementById('expenseDescription').value;
-
-            try {
-                const response = await fetch('http://localhost:5000/api/delete-expense', {
-                    method: 'DELETE',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ description: expenseDescription })
-                });
-                if (response.ok) {
-                    alert('Expense deleted successfully!');
-                } else {
-                    alert('Failed to delete expense');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
     </script>
 </body>
 </html>
